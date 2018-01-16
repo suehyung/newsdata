@@ -26,3 +26,25 @@ Run the Python script:
 `$ python news-report.py`
 
 The script will generate text comprising the 3 reports from the SQL database.
+
+## 3. VIEW DEFINITIONS
+The script includes three views for the third and final report:
+
+```sql
+$ create view errortable as select date(log.time) as day, \
+count(*) as errorcount from public.log where log.status != '200 OK' \
+group by date(log.time) order by day
+```
+
+```sql
+$ create view totaltable as select date(log.time) as day, \
+count(*) as totalcount from public.log group by date(log.time) \
+order by day
+```
+
+```sql
+$create view percenttable as select totaltable.day as day, \
+round(errortable.errorcount * 100.0 / totaltable.totalcount, 1) as \
+errorpercent from totaltable join errortable on totaltable.day = \
+errortable.day order by totaltable.day
+```
