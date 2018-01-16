@@ -1,0 +1,15 @@
+vagrant@vagrant:/vagrant/newsdata$ python news-report.py
+
+Top 3 Articles By Views
+Article: Candidate is jerk, alleges rival         Views: 338647
+Article: Bears love berries, alleges bear         Views: 253801
+Article: Bad things gone, say good people         Views: 170098
+
+Most Popular Authors By Views
+Author: Ursula La Multa                Views: 507594
+Author: Rudolf von Treppenwitz         Views: 423457
+Author: Anonymous Contributor          Views: 170098
+Author: Markoff Chaney                 Views: 84557
+
+Days With > 1 Percent Error Rate on Requests
+Date: July 17, 2016       Error Rate:  2.3%
